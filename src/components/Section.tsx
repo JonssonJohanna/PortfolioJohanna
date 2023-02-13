@@ -1,20 +1,24 @@
-import { useRef, useEffect } from "react";
-import { CurrentSection, useSectionContext } from "../providers/sectionProvider";
+import { useRef, useEffect } from 'react';
+import {
+  CurrentSection,
+  useSectionContext,
+} from '../providers/sectionProvider';
 
 const IO_OPTIONS = {
   threshold: [0.5],
   root: null,
-  rootMargin: "0%",
+  rootMargin: '0%',
 };
 
 const Section: React.FC<{
   name: CurrentSection;
+  children: any;
 }> = ({ name, children }) => {
   const { setCurrentSection, currentSection } = useSectionContext();
   const ref = useRef<HTMLDivElement | null>(null);
 
   const updateEntry = ([entry]: IntersectionObserverEntry[]): void => {
-    if (entry.intersectionRatio > 0.5 ) {
+    if (entry.intersectionRatio > 0.5) {
       setCurrentSection(name);
     }
   };
@@ -31,10 +35,8 @@ const Section: React.FC<{
   }, [ref]);
 
   return (
-    <div ref={ref} >
-      <div style={{ margin: "auto" }}>
-        {children}
-      </div>
+    <div ref={ref}>
+      <div style={{ margin: 'auto' }}>{children}</div>
     </div>
   );
 };

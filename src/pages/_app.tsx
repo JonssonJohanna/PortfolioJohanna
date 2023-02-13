@@ -1,7 +1,7 @@
 import '../styles/globals.css';
 import Head from 'next/head';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: any) {
   return (
     <div>
       <Head>

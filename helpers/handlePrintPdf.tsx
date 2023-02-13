@@ -17,13 +17,13 @@ export const handlePrintPdf = async () => {
     doc.addImage(image, 'PNG', 65, 4, 50, 50);
     // doc.addImage(image, 'PNG', 70, 7, 25, 10);
 
-    doc.setFont(undefined, 'bold').text('Consultant CV', 22, 10);
-    doc.setFont(undefined, 'normal');
+    doc.setFont('', 'bold').text('Consultant CV', 22, 10);
+    doc.setFont('', 'normal');
     doc.text('Johanna', 22, 15);
-    doc.setFont(undefined, 'bold');
+    doc.setFont('', 'bold');
     doc.setFontSize(10);
     doc.text('CV', width / 2, 280, { align: 'center' });
-    doc.setFont(undefined, 'normal');
+    doc.setFont('', 'normal');
     doc.setFontSize(8);
     doc.text('johanna_jonson@hotmail.com', width / 2, 285, {
       align: 'center',
@@ -32,10 +32,3 @@ export const handlePrintPdf = async () => {
     await doc.save('Johanna_Jonsson' + '.pdf');
   }
 };
-
-//   doc.text('+46 733 667 869', width / 2, 290, { align: 'center' });
-//   doc.addImage(image, 'PNG', 65, 4, 3, 15);
-//   doc.addImage(image, 'PNG', 70, 7, 25, 10);
-// }
-// await doc.save('Johanna_Jonsson' + '.pdf');
-//   },

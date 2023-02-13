@@ -78,11 +78,11 @@ const Nav: React.FC = () => {
   );
 };
 
-const Item: React.FC<{ isActive: boolean; scrollDirection: string }> = ({
-  isActive,
-  scrollDirection,
-  children,
-}) => {
+const Item: React.FC<{
+  isActive: boolean;
+  scrollDirection: string | undefined;
+  children: any;
+}> = ({ isActive, scrollDirection, children }) => {
   const ref = useRef(null);
   const isMobile = useIsMobile();
 
@@ -127,7 +127,7 @@ const Item: React.FC<{ isActive: boolean; scrollDirection: string }> = ({
     if (!isActive && ref.current) {
       onExit();
     }
-
+    //@ts-ignore
     ref.current = isActive;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isActive]);
