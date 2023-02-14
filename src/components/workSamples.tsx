@@ -6,6 +6,10 @@ import {
 import Section from './Section';
 import { a, to, useSpring } from 'react-spring';
 import useIsMobile from '../hooks/useIsMobile';
+import Image from 'next/image';
+import Love from '../../public/lovecalculator.png';
+import Snake from '../../public/snake.png';
+import Byrarackor from '../../public/byrå.png';
 
 const sectionName: CurrentSection = 'work samples';
 
@@ -46,22 +50,39 @@ const WorkSamples: React.FC = () => {
         >
           <div style={shapeStyle} />
           <ul style={wrapperListtyle(isMobile)}>
-            <li style={textStyle}>
-              <a
-                href='https://bureau-racks-d4fj.vercel.app/'
-                target='_blank'
-                rel='noreferrer'
-              >
-                Byrårackor
-              </a>
-            </li>
+            <div style={imageWrapper}>
+              <li style={textStyle}>
+                <a
+                  href='https://bureau-racks-d4fj.vercel.app/'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  Byrårackor <br></br> As a final part of the program this was a
+                  group assignment with the main purpose to come up with an idea
+                  and build something awesome and cool. The website is built
+                  using Next.js, Firestore and styled components for styling.
+                  The project also includes the Google maps Api.
+                </a>
+              </li>
+              {/* <div style={imageStyle}>
+                <Image
+                  alt={'Profile Picture'}
+                  src={Byrarackor.src}
+                  width={200}
+                  height={100}
+                />
+              </div> */}
+            </div>
             <li style={textStyle}>
               <a
                 href='https://snake-game-pixi.netlify.app/'
                 target='_blank'
                 rel='noreferrer'
               >
-                Snake Game
+                Snake Game <br></br> This was a group assignment, the purpose
+                was to create a game or an experience using JavaScript. The
+                project had to utilize a third-party WebGL framework, we chose
+                to create Snake using Pixi.js.
               </a>
             </li>
             <li style={textStyle}>
@@ -70,7 +91,8 @@ const WorkSamples: React.FC = () => {
                 target='_blank'
                 rel='noreferrer'
               >
-                Love Calculator
+                Love Calculator <br></br> This assignment was our first React
+                project. The project also includes an Api with fun quotes.
               </a>
             </li>
           </ul>
@@ -117,14 +139,25 @@ const wrapperListtyle: (arg: boolean) => CSSProperties = (
   isMobile: boolean
 ) => ({
   position: 'absolute',
-  right: isMobile ? '20vw' : '40vw',
+  right: isMobile ? '15vw' : '30vw',
   top: '250px',
   gap: '20px',
-  fontSize: '20px',
+  fontSize: isMobile ? '18px' : '20px',
+  width: isMobile ? '300px' : '700px',
 });
 
 const textStyle: CSSProperties = {
   paddingBottom: '20px',
+};
+const imageWrapper: CSSProperties = {
+  display: 'flex',
+  flexDirection: 'column',
+};
+const imageStyle: CSSProperties = {
+  marginTop: '2rem',
+  overflow: 'hidden',
+  width: '200px',
+  height: '100px',
 };
 
 export default WorkSamples;

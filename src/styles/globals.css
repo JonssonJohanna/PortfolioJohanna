@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Poppins-black';
   src: local('Poppins-Black'),
-    url('/src/fonts/Poppins-Light.woff') format('woff');
+    url('../../public/fonts/Poppins-Black.woff') format('woff');
 }
 
 html,
