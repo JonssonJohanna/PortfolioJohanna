@@ -28,7 +28,7 @@ const Nav: React.FC = () => {
 
   useEffect(() => {
     const changeNavbarScroll = () => {
-      if (window.scrollY >= 2800) {
+      if (window.scrollY >= 2500) {
         setScrollchange(true);
       } else {
         setScrollchange(false);
