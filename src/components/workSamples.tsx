@@ -153,11 +153,5 @@ const imageWrapper: CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
 };
-const imageStyle: CSSProperties = {
-  marginTop: '2rem',
-  overflow: 'hidden',
-  width: '200px',
-  height: '100px',
-};
 
 export default WorkSamples;
