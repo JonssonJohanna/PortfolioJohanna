@@ -58,10 +58,9 @@ const WorkSamples: React.FC = () => {
                   rel='noreferrer'
                 >
                   Byrårackor <br></br> As a final part of the program this was a
-                  group assignment with the main purpose to come up with an idea
-                  and build something awesome and cool. The website is built
-                  using Next.js, Firestore and styled components for styling.
-                  The project also includes the Google maps Api.
+                  group assignment. The website is built using Next.js,
+                  Firestore and styled components for styling. The project also
+                  includes the Google maps Api.
                 </a>
               </li>
               {/* <div style={imageStyle}>
@@ -140,7 +139,7 @@ const wrapperListtyle: (arg: boolean) => CSSProperties = (
 ) => ({
   position: 'absolute',
   right: isMobile ? '15vw' : '30vw',
-  top: '250px',
+  top: isMobile ? '190px' : '250px',
   gap: '20px',
   fontSize: isMobile ? '18px' : '20px',
   width: isMobile ? '300px' : '700px',

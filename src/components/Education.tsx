@@ -9,7 +9,7 @@ import useIsMobile from '../hooks/useIsMobile';
 
 const sectionName: CurrentSection = 'education';
 const educations = [
-  'Web Developer, YRGO 2021-Ongoing',
+  'Web Developer, YRGO Gothenburg, 2021-Ongoing',
   'Biology, Uppsala University 2020-2021',
   'Bachlor Environmental Science, Malmö University 2017–2020',
   'Sigrid Rudebecks Gymnasium, Gothenburg 2010–2013',
@@ -98,7 +98,7 @@ const wrapperListtyle: (arg: boolean) => CSSProperties = (
 ) => ({
   position: 'absolute',
   right: isMobile ? '6vh' : '50vh',
-  top: '280px',
+  top: isMobile ? '180px' : '250px',
   gap: '20px',
   maxWidth: isMobile ? '260px' : '700px',
   fontSize: '20px',

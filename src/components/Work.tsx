@@ -105,8 +105,8 @@ const wrapperListtyle: (arg: boolean) => CSSProperties = (
   isMobile: boolean
 ) => ({
   position: 'absolute',
-  right: isMobile ? '6vw' : '50vw',
-  top: '280px',
+  right: isMobile ? '15vw' : '40vw',
+  top: isMobile ? '180px' : '250px',
   gap: '20px',
   maxWidth: isMobile ? '260px' : '700px',
   color: 'white',
