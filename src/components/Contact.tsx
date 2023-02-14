@@ -64,7 +64,8 @@ const contactStyle: CSSProperties = {
   justifyContent: 'center',
   alignItems: 'center',
   textAlign: 'center',
-  height: '100vh',
+  height: '90vh',
+  position: 'relative',
 };
 
 const linkStyle: CSSProperties = {

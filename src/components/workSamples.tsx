@@ -104,7 +104,7 @@ const WorkSamples: React.FC = () => {
 const wrapperStyle: CSSProperties = {
   background: '#f06c9b',
   position: 'relative',
-  minHeight: '100vh',
+  minHeight: '130vh',
   width: '100vw',
   overflow: 'hidden',
 };

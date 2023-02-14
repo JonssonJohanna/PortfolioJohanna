@@ -4,7 +4,6 @@ import { CSSProperties } from 'react';
 import useIsMobile from '../hooks/useIsMobile';
 
 const sectionName = 'intro';
-
 const items = [
   <h1 key='1'>Johanna</h1>,
   <h1 key='2'>Jönsson</h1>,
@@ -18,24 +17,24 @@ const items = [
     TypeScript and MongoDb.
   </p>,
 ];
-
 const Intro: React.FC<{ open?: boolean }> = ({ open = true }) => {
+  const isMobile = useIsMobile();
+  const rowHeight = isMobile ? 70 : 135;
   const trail = useTrail(items.length, {
     config: { mass: 5, tension: 2000, friction: 200 },
     opacity: open ? 1 : 0,
     x: open ? 0 : 30,
-    height: open ? 135 : 0,
+    height: open ? rowHeight : 0,
     from: { opacity: 0, x: 30, height: 0 },
   });
 
-  const isMobile = useIsMobile();
   return (
     <Section name={sectionName}>
       <div style={introStyle}>
         <div style={lineStyle(isMobile)} />
         <div>
           {trail.map(({ height, ...style }, index) => (
-            <a.div key={index} style={{ ...style, height: '135px' }}>
+            <a.div key={index} style={{ ...style, height: `${rowHeight}px` }}>
               <a.div
                 style={{ height, ...(index < 2 && { overflow: 'hidden' }) }}
               >
