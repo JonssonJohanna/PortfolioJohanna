@@ -6,13 +6,30 @@ import {
 import Section from './Section';
 import { a, to, useSpring } from 'react-spring';
 import useIsMobile from '../hooks/useIsMobile';
+import Resume from './Resume';
 
 const sectionName: CurrentSection = 'education';
 const educations = [
-  'Web Developer, YRGO Gothenburg, 2021-Ongoing',
-  'Biology, Uppsala University 2020-2021',
-  'Bachlor Environmental Science, Malmö University 2017–2020',
-  'Sigrid Rudebecks Gymnasium, Gothenburg 2010–2013',
+  {
+    duration: '2021-Ongoing',
+    title: 'Web Developer',
+    company: 'YRGO Gothenburg',
+  },
+  {
+    duration: '2020-2021',
+    title: 'Bology',
+    company: 'Uppsala University',
+  },
+  {
+    duration: '2017–2020',
+    title: 'Bachlor Environmental Science',
+    company: 'Malmö University',
+  },
+  {
+    duration: '2010–2013',
+    title: 'Sigrid Rudebecks Gymnasium',
+    company: 'Gothenburg',
+  },
 ];
 
 const Education: React.FC = () => {
@@ -51,15 +68,9 @@ const Education: React.FC = () => {
           }}
         >
           <div style={shapeStyle} />
-          <ul style={wrapperListtyle(isMobile)}>
-            {educations.map((education, i) => {
-              return (
-                <li key={i} style={textStyle}>
-                  {education}
-                </li>
-              );
-            })}
-          </ul>
+          <div style={wrapperListtyle(isMobile)}>
+            <Resume items={educations} />
+          </div>
         </a.div>
       </div>
     </Section>

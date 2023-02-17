@@ -10,6 +10,7 @@ import Image from 'next/image';
 import Love from '../../public/lovecalculator.png';
 import Snake from '../../public/snake.png';
 import Byrarackor from '../../public/byrå.png';
+import axios from 'axios';
 
 const sectionName: CurrentSection = 'work samples';
 
@@ -38,6 +39,16 @@ const WorkSamples: React.FC = () => {
     });
   };
   const isMobile = useIsMobile();
+  const { projects, isLoading, hasError } = useGitProjects([
+    'vigilant-guacamole',
+    'bureau-racks',
+    'Playdate',
+    'eastgbg',
+  ]);
+  console.log('gitprojects' + useGitProjects);
+
+  console.log('projects' + projects);
+
   return (
     <Section name={sectionName}>
       <div style={wrapperStyle}>
@@ -63,14 +74,6 @@ const WorkSamples: React.FC = () => {
                   includes the Google maps Api.
                 </a>
               </li>
-              {/* <div style={imageStyle}>
-                <Image
-                  alt={'Profile Picture'}
-                  src={Byrarackor.src}
-                  width={200}
-                  height={100}
-                />
-              </div> */}
             </div>
             <li style={textStyle}>
               <a
@@ -151,6 +154,51 @@ const textStyle: CSSProperties = {
 const imageWrapper: CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
+};
+
+const BASE_URL = 'https://api.github.com/repos/JonssonJohanna/';
+
+const useGitProjects = (repositoryList: string[]) => {
+  const [projects, setProjects] = useState<any>();
+  const [hasError, setError] = useState(false);
+
+  useEffect(() => {
+    getProjects();
+  }, []);
+
+  const getProjects = async () => {
+    try {
+      const projects = await fetchProjects(repositoryList);
+
+      setProjects(projects);
+    } catch (e) {
+      setError(true);
+    }
+  };
+
+  return { projects, hasError, isLoading: !hasError && !projects };
+};
+
+const fetchProjects = async (cards: string[]): Promise<any[]> =>
+  Promise.all(cards.map((card) => fetchProject(card)));
+
+const fetchProject = async (repo: string): Promise<any> => {
+  const apiUrl = `${BASE_URL}${repo}`;
+
+  try {
+    const { data } = await axios.get(apiUrl);
+
+    return {
+      title: data.name,
+      text: data.description,
+      language: data.language,
+      updated: data.pushed_at,
+      repoUrl: data.html_url,
+      homepage: data.homepage,
+    };
+  } catch (e) {
+    console.error(`Failed to fetch resource from ${apiUrl}`);
+  }
 };
 
 export default WorkSamples;
