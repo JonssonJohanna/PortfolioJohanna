@@ -73,39 +73,12 @@ const WorkSamples: React.FC = () => {
                     key={index}
                     style={{
                       display: 'flex',
-                      flexDirection: 'row-reverse',
+                      flexDirection: 'row',
                       justifyContent: 'space-between',
                       maxWidth: '400px',
                       margin: '0 auto',
                     }}
                   >
-                    <div
-                      style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        textAlign: 'right',
-                      }}
-                    >
-                      <p style={{ margin: 0 }}>
-                        {getConvertDate(project.updated)}
-                      </p>
-                      <a
-                        style={{ margin: '5px 0', fontFamily: 'Roboto' }}
-                        href={project.repoUrl}
-                        target='_blank'
-                        rel='noreferrer'
-                      >
-                        Repositroy
-                      </a>
-                      <a
-                        style={{ margin: '5px 0', fontFamily: 'Roboto' }}
-                        href={project.homePage}
-                        target='_blank'
-                        rel='noreferrer'
-                      >
-                        Homepage
-                      </a>
-                    </div>
                     <div
                       style={{
                         display: 'flex',
@@ -125,6 +98,34 @@ const WorkSamples: React.FC = () => {
                       </h3>
                       <p style={{ fontSize: '14px', marginTop: '0' }}>
                         {project.language}
+                      </p>
+                    </div>
+                    <div
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        textAlign: 'right',
+                        paddingBottom: '2rem',
+                      }}
+                    >
+                      <a
+                        style={{ margin: '5px 0', fontFamily: 'Roboto' }}
+                        href={project.repoUrl}
+                        target='_blank'
+                        rel='noreferrer'
+                      >
+                        Repositroy
+                      </a>
+                      <a
+                        style={{ margin: '5px 0', fontFamily: 'Roboto' }}
+                        href={project.homePage}
+                        target='_blank'
+                        rel='noreferrer'
+                      >
+                        Homepage
+                      </a>
+                      <p style={{ margin: 0, fontSize: '14px' }}>
+                        {getConvertDate(project.updated)}
                       </p>
                     </div>
                   </div>
