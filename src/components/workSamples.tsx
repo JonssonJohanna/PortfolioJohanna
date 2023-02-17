@@ -6,10 +6,7 @@ import {
 import Section from './Section';
 import { a, to, useSpring } from 'react-spring';
 import useIsMobile from '../hooks/useIsMobile';
-import Image from 'next/image';
-import Love from '../../public/lovecalculator.png';
-import Snake from '../../public/snake.png';
-import Byrarackor from '../../public/byrå.png';
+import { getConvertDate } from 'helpers/convertDate';
 import axios from 'axios';
 
 const sectionName: CurrentSection = 'work samples';
@@ -45,9 +42,7 @@ const WorkSamples: React.FC = () => {
     'Playdate',
     'eastgbg',
   ]);
-  console.log('gitprojects' + useGitProjects);
-
-  console.log('projects' + projects);
+  console.log('gitprojects', projects);
 
   return (
     <Section name={sectionName}>
@@ -60,44 +55,82 @@ const WorkSamples: React.FC = () => {
           }}
         >
           <div style={shapeStyle} />
-          <ul style={wrapperListtyle(isMobile)}>
-            <div style={imageWrapper}>
-              <li style={textStyle}>
-                <a
-                  href='https://bureau-racks-d4fj.vercel.app/'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  Byrårackor <br></br> As a final part of the program this was a
-                  group assignment. The website is built using Next.js,
-                  Firestore and styled components for styling. The project also
-                  includes the Google maps Api.
-                </a>
-              </li>
-            </div>
-            <li style={textStyle}>
-              <a
-                href='https://snake-game-pixi.netlify.app/'
-                target='_blank'
-                rel='noreferrer'
-              >
-                Snake Game <br></br> This was a group assignment, the purpose
-                was to create a game or an experience using JavaScript. The
-                project had to utilize a third-party WebGL framework, we chose
-                to create Snake using Pixi.js.
-              </a>
-            </li>
-            <li style={textStyle}>
-              <a
-                href='https://eastgbg-aogaygyr1-jonssonjohanna.vercel.app/'
-                target='_blank'
-                rel='noreferrer'
-              >
-                Love Calculator <br></br> This assignment was our first React
-                project. The project also includes an Api with fun quotes.
-              </a>
-            </li>
-          </ul>
+          <div style={wrapperListtyle(isMobile)}>
+            {projects &&
+              projects.map(
+                (
+                  project: {
+                    title: string | undefined;
+                    text: string | undefined;
+                    language: string | undefined;
+                    updated: string | number | Date;
+                    repoUrl: any;
+                    homePage: any;
+                  },
+                  index: React.Key | null | undefined
+                ) => (
+                  <div
+                    key={index}
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'row-reverse',
+                      justifyContent: 'space-between',
+                      maxWidth: '400px',
+                      margin: '0 auto',
+                    }}
+                  >
+                    <div
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        textAlign: 'right',
+                      }}
+                    >
+                      <p style={{ margin: 0 }}>
+                        {getConvertDate(project.updated)}
+                      </p>
+                      <a
+                        style={{ margin: '5px 0', fontFamily: 'Roboto' }}
+                        href={project.repoUrl}
+                        target='_blank'
+                        rel='noreferrer'
+                      >
+                        Repositroy
+                      </a>
+                      <a
+                        style={{ margin: '5px 0', fontFamily: 'Roboto' }}
+                        href={project.homePage}
+                        target='_blank'
+                        rel='noreferrer'
+                      >
+                        Homepage
+                      </a>
+                    </div>
+                    <div
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        paddingBottom: 0,
+                        textAlign: 'left',
+                      }}
+                    >
+                      <h3
+                        style={{
+                          marginBottom: '3px',
+                          marginTop: '0',
+                          paddingRight: '15px',
+                        }}
+                      >
+                        {project.title}
+                      </h3>
+                      <p style={{ fontSize: '14px', marginTop: '0' }}>
+                        {project.language}
+                      </p>
+                    </div>
+                  </div>
+                )
+              )}
+          </div>
         </a.div>
       </div>
     </Section>

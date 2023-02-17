@@ -24,8 +24,8 @@ const ResumeItem: React.FC<ResumeItemProps> = ({
       <p style={{ fontSize: '14px' }}>{duration}</p>
     </div>
     <div>
-      <h2 style={{ margin: 0 }}>{title}</h2>
-      <h3 style={{ margin: '5px 0', fontFamily: 'Roboto' }}>{company}</h3>
+      <h3 style={{ margin: 0 }}>{title}</h3>
+      <h4 style={{ margin: '5px 0', fontFamily: 'Roboto' }}>{company}</h4>
       <p style={{ marginTop: 0, fontSize: '14px' }}>{description}</p>
     </div>
   </div>
