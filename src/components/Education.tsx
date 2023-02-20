@@ -17,7 +17,7 @@ const educations = [
   },
   {
     duration: '2020-2021',
-    title: 'Bology',
+    title: 'Biology',
     company: 'Uppsala University',
   },
   {

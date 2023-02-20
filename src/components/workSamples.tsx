@@ -65,7 +65,7 @@ const WorkSamples: React.FC = () => {
                     language: string | undefined;
                     updated: string | number | Date;
                     repoUrl: any;
-                    homePage: any;
+                    homepage: any;
                   },
                   index: React.Key | null | undefined
                 ) => (
@@ -114,11 +114,11 @@ const WorkSamples: React.FC = () => {
                         target='_blank'
                         rel='noreferrer'
                       >
-                        Repositroy
+                        Repository
                       </a>
                       <a
                         style={{ margin: '5px 0', fontFamily: 'Roboto' }}
-                        href={project.homePage}
+                        href={project.homepage}
                         target='_blank'
                         rel='noreferrer'
                       >
