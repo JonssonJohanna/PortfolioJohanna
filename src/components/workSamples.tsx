@@ -41,6 +41,7 @@ const WorkSamples: React.FC = () => {
     'bureau-racks',
     'Playdate',
     'eastgbg',
+    'wunderlist',
   ]);
   console.log('gitprojects', projects);
 
