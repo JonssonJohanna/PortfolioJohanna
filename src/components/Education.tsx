@@ -11,7 +11,7 @@ import Resume from './Resume';
 const sectionName: CurrentSection = 'education';
 const educations = [
   {
-    duration: '2021-Ongoing',
+    duration: '2021-2023',
     title: 'Web Developer',
     company: 'YRGO Gothenburg',
   },

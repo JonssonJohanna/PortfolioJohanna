@@ -12,9 +12,14 @@ import { education, experience } from '@/content';
 const sectionName: CurrentSection = 'work';
 const experiences = [
   {
+    title: 'Fullstack Developer',
+    company: 'Solme',
+    duration: 'Ongoing',
+  },
+  {
     title: 'Intern as Web Developer',
     company: 'Annevo AB',
-    duration: '2022 - ongoing',
+    duration: '2022 - 2023',
   },
   { title: 'Administrator', company: 'Östra Sjukhuset', duration: '2022' },
   {

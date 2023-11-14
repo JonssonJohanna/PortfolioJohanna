@@ -7,14 +7,16 @@ const sectionName = 'intro';
 const items = [
   <h1 key='1'>Johanna</h1>,
   <h1 key='2'>Jönsson</h1>,
-  <p key='3' style={{ marginTop: '50px', maxWidth: '450px' }}>
-    My name is Johanna and I am a Fullstack Developer from Gothenburg. I am
-    currently an intern at Annevo, where I am gaining experience working as a
-    part of a team as well as independently to meet deadlines while liaising
-    with both designers and clients. My goal is is to explore as many areas and
-    learn as much possible while delivering innovative work. By the end of my
-    internship I will also have strengthened my skills in Next.js, React,
-    TypeScript and MongoDb.
+  <p
+    key='3'
+    style={{ marginTop: '50px', maxWidth: '450px', paddingRight: '2rem' }}
+  >
+    My name is Johanna and I am a Fullstack Developer but frontend development
+    is what I find most enjoyable because it is creative, always challenging,
+    and never boring. There are always new things to learn. My goal is is to
+    explore as many areas and learn as much possible while delivering innovative
+    work. From previous work experiences, I have developed skills and experience
+    in Next.js, React, TypeScript, Aurelia and MongoDB.
   </p>,
 ];
 const Intro: React.FC<{ open?: boolean }> = ({ open = true }) => {
