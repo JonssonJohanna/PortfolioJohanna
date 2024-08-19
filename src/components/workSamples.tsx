@@ -37,11 +37,11 @@ const WorkSamples: React.FC = () => {
   };
   const isMobile = useIsMobile();
   const { projects, isLoading, hasError } = useGitProjects([
+    'union-invite',
     'vigilant-guacamole',
     'bureau-racks',
     'Playdate',
     'eastgbg',
-    'wunderlist',
   ]);
   console.log('gitprojects', projects);
 
@@ -204,6 +204,7 @@ const useGitProjects = (repositoryList: string[]) => {
   const getProjects = async () => {
     try {
       const projects = await fetchProjects(repositoryList);
+      console.log(projects, 'projects');
 
       setProjects(projects);
     } catch (e) {
