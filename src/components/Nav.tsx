@@ -6,7 +6,6 @@ import { useSpring, a } from '@react-spring/web';
 import { to } from 'react-spring';
 import { CSSProperties, useEffect, useRef, useState } from 'react';
 import useIsMobile from '../hooks/useIsMobile';
-import { handlePrintPdf } from '../../helpers/handlePrintPdf';
 
 const navItems = ['intro', 'education', 'work', 'work samples', 'contact'];
 

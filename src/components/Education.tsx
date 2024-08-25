@@ -3,6 +3,7 @@ import {
   CurrentSection,
   useSectionContext,
 } from '../providers/sectionProvider';
+
 import Section from './Section';
 import { a, to, useSpring } from 'react-spring';
 import useIsMobile from '../hooks/useIsMobile';
