@@ -79,7 +79,7 @@ const Education: React.FC = () => {
 };
 
 const wrapperStyle: CSSProperties = {
-  background: '#eeeeee',
+  background: '#F1EEE9',
   position: 'relative',
   minHeight: '100vh',
   width: '100vw',

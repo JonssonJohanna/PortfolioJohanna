@@ -163,7 +163,7 @@ const shapeStyle: CSSProperties = {
   bottom: 0,
   right: 0,
   clipPath: 'polygon(30% 0, 100% 0, 100% 100%, 70% 100%)',
-  background: '#eeeeee',
+  background: '#F1EEE9',
 };
 
 const headingStyle: CSSProperties = {

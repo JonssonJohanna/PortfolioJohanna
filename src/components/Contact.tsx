@@ -72,7 +72,7 @@ const linkStyle: CSSProperties = {
   position: 'relative',
   display: 'flex',
   width: 'fit-content',
-  color: '#2356d1',
+  color: '#0066B9',
 };
 
 const linkLineStyle: CSSProperties = {
@@ -80,7 +80,7 @@ const linkLineStyle: CSSProperties = {
   left: 0,
   bottom: 0,
   height: '8px',
-  backgroundColor: '#2356d1',
+  backgroundColor: '#0066B9',
 };
 const imageStyle: CSSProperties = {
   marginTop: '2rem',
